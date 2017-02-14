@@ -24,7 +24,8 @@ public class Edd_prac1 {
         //hola.cargarXml();
         //prueba de github
 
-// ve pues 
+        // ve pues 
+        System.out.println("prueba github");
 
         
     }
