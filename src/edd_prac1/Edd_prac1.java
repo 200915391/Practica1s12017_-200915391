@@ -27,7 +27,7 @@ public class Edd_prac1 {
         // ve pues 
         System.out.println("prueba github");
 
-        
+        // lol
     }
 
    
