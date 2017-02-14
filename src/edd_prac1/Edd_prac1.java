@@ -22,7 +22,10 @@ public class Edd_prac1 {
        edd_prac1.lectura_xml hola = new edd_prac1.lectura_xml();
        //hola.abrir();
         //hola.cargarXml();
-        
+        //prueba de github
+
+// ve pues 
+
         
     }
 
