@@ -15,16 +15,17 @@ import java.awt.Button;
 
 public class UI_ventana_juego extends javax.swing.JFrame {
 
+int tamano = 5;
     
-    
-Boton [] [] botones = new Boton [5] [5] ;
-int filas =5;
-int columnas = 5;
+Boton [] [] botones = new Boton [tamano] [tamano] ;
+int filas =tamano;
+int columnas = tamano;
     /**
      * Creates new form UI_ventana_juego
      */
     public UI_ventana_juego() {
         initComponents();
+        Botones();
     }
 
     /**
@@ -37,36 +38,47 @@ int columnas = 5;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Juego");
+
+        jPanel1.setForeground(new java.awt.Color(153, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 574, Short.MAX_VALUE)
+            .addGap(0, 715, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
+            .addGap(0, 505, Short.MAX_VALUE)
         );
+
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(126, 126, 126))
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -111,13 +123,15 @@ int columnas = 5;
     for (int fila = 0 ; fila<filas ; fila++){
         for (int columna = 0 ; columna<columnas ; columna++){
             
-    botones [fila] [columna] = new Boton(45*columna, 30*fila, 55, 45);
-    //botones [fila] [columna].setNombre(fila, columna);
+    botones [fila] [columna] = new Boton(45*columna, 30*fila, 70, 40);
+    //botones [fila] [columna].setName(fila,columna);
+    botones [fila] [columna].CambiarNombre(fila,columna);
+    //botones[fila] [columna].setName("hola");
     jPanel1.add(botones [fila] [columna]);
             
             
             
-            }  
+            } 
     }
     
     
@@ -126,6 +140,7 @@ int columnas = 5;
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
