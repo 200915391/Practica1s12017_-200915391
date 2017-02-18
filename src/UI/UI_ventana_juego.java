@@ -17,9 +17,9 @@ public class UI_ventana_juego extends javax.swing.JFrame {
 
     
     
-Button [] [] botones = new Button [5] [5] ;
-int filas;
-int columnas;
+Boton [] [] botones = new Boton [5] [5] ;
+int filas =5;
+int columnas = 5;
     /**
      * Creates new form UI_ventana_juego
      */
@@ -45,11 +45,11 @@ int columnas;
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
+            .addGap(0, 574, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 376, Short.MAX_VALUE)
+            .addGap(0, 413, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -57,16 +57,16 @@ int columnas;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(346, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(35, 35, 35)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
@@ -108,8 +108,16 @@ int columnas;
     }
 
     public  void  Botones (){
-    for (int i = 0 ; i<10 ; i++){
-    
+    for (int fila = 0 ; fila<filas ; fila++){
+        for (int columna = 0 ; columna<columnas ; columna++){
+            
+    botones [fila] [columna] = new Boton(45*columna, 30*fila, 55, 45);
+    //botones [fila] [columna].setNombre(fila, columna);
+    jPanel1.add(botones [fila] [columna]);
+            
+            
+            
+            }  
     }
     
     
