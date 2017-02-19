@@ -117,11 +117,13 @@ public class UI_ventana_jugadores extends javax.swing.JFrame {
        bandera_seguir = true;
         
         //var_texto =jTextField1.getText();
-        
-        if(bandera_seguir == true)
+        nombre_jugador=jTextField1.getText();
+        if(lista.esVacia()==true)
         {
-             nombre_jugador=jTextField1.getText();
-           // JOptionPane.showMessageDialog(null,"Jugador "+ nombre_jugador+" Agregado");
+            
+            lista.agregarAlFinal(num_player, jTextField1.getText().toString());
+             
+            JOptionPane.showMessageDialog(null,"Jugador "+ nombre_jugador+" Agregado");
             bandera_seguir = true;
             go_ventana_jugar();
             
@@ -129,18 +131,20 @@ public class UI_ventana_jugadores extends javax.swing.JFrame {
         }
         else
         {
-            
-            JOptionPane.showMessageDialog(null,"Agregue Jugador");
-        }
-        
-        
-       if (lista.buscar(jTextField1.getText())==true){
-          System.out.println("existe");
+              if (lista.buscar(jTextField1.getText())==true){
+          //System.out.println("existe");
+          JOptionPane.showMessageDialog(null,"Jugador  "+ nombre_jugador+" no agregado");
       }else{
           //System.out.println("agregar nuevo");
            lista.agregarAlFinal(num_player, jTextField1.getText().toString());
+           JOptionPane.showMessageDialog(null,"Jugador "+ nombre_jugador+" Agregado");
         num_player++;
       }
+           
+        }
+        
+        
+     
         
         
         
