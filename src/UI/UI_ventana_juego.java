@@ -15,7 +15,7 @@ import java.awt.Button;
 
 public class UI_ventana_juego extends javax.swing.JFrame {
 
-int tamano = 5;
+int tamano = 11;
     
 Boton [] [] botones = new Boton [tamano] [tamano] ;
 int filas =tamano;
@@ -271,7 +271,7 @@ int columnas = tamano;
     for (int fila = 0 ; fila<filas ; fila++){
         for (int columna = 0 ; columna<columnas ; columna++){
             
-    botones [fila] [columna] = new Boton(45*columna, 30*fila, 70, 40);
+    botones [fila] [columna] = new Boton(50*columna, 50*fila, 50, 50);
     //botones [fila] [columna].setName(fila,columna);
     botones [fila] [columna].CambiarNombre(fila,columna);
     //botones[fila] [columna].setName("hola");
