@@ -149,7 +149,14 @@ public class UI_Prueba extends javax.swing.JFrame {
         
         
         
-      lista.buscar(jTextField1.getText());
+     // lista.buscar(jTextField1.getText());
+      if (lista.buscar(jTextField1.getText())==true){
+          System.out.println("existe");
+      }else{
+          //System.out.println("agregar nuevo");
+           lista.agregarAlFinal(num_player, jTextField1.getText().toString());
+        num_player++;
+      }
         //lista.buscar(2);
         
     }//GEN-LAST:event_jButton3ActionPerformed

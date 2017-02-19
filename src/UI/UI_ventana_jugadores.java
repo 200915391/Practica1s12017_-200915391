@@ -6,7 +6,8 @@
 package UI;
 
 import javax.swing.JOptionPane;
-import lista_circular_nombres.*;
+import lista_circular_nombres.*; 
+import lista_circular.*;
 /**
  *
  * @author R0GV3
@@ -18,7 +19,9 @@ public class UI_ventana_jugadores extends javax.swing.JFrame {
     String nombre_jugador = "";
     String var_texto="";
     
-    
+    lista_circular.lista_circular_lc lista = new lista_circular.lista_circular_lc(); // instancia de la priemr lista
+    int num_player=0;
+    boolean bandera_ju_existente = false;
     /**
      * Creates new form UI_ventana_jugadores
      */
@@ -118,7 +121,7 @@ public class UI_ventana_jugadores extends javax.swing.JFrame {
         if(bandera_seguir == true)
         {
              nombre_jugador=jTextField1.getText();
-            JOptionPane.showMessageDialog(null,"Jugador "+ nombre_jugador+" Agregado");
+           // JOptionPane.showMessageDialog(null,"Jugador "+ nombre_jugador+" Agregado");
             bandera_seguir = true;
             go_ventana_jugar();
             
@@ -131,24 +134,32 @@ public class UI_ventana_jugadores extends javax.swing.JFrame {
         }
         
         
+       if (lista.buscar(jTextField1.getText())==true){
+          System.out.println("existe");
+      }else{
+          //System.out.println("agregar nuevo");
+           lista.agregarAlFinal(num_player, jTextField1.getText().toString());
+        num_player++;
+      }
+        
         
         
         
         
         jTextField1.setText("");
-        
-        lista_circular_nombres.lista_circular1 lista_circular =  new lista_circular_nombres.lista_circular1();
-       
-        lista_circular.agregarAlInicio(0);
-        lista_circular.agregarAlInicio(1);
-        lista_circular.agregarAlInicio(2);
-        lista_circular.agregarAlInicio(3);
-        lista_circular.listar();
-        try {
-            System.out.println(lista_circular.getValor(3));
-        } catch (Exception e) {
-            System.out.println("lista vacia");
-        }
+        lista.MostrarSiguiente();
+//        lista_circular_nombres.lista_circular1 lista_circular =  new lista_circular_nombres.lista_circular1();
+//       
+//        lista_circular.agregarAlInicio(0);
+//        lista_circular.agregarAlInicio(1);
+//        lista_circular.agregarAlInicio(2);
+//        lista_circular.agregarAlInicio(3);
+//        lista_circular.listar();
+//        try {
+//            System.out.println(lista_circular.getValor(3));
+//        } catch (Exception e) {
+//            System.out.println("lista vacia");
+//        }
         
        
         

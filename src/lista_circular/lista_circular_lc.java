@@ -115,7 +115,7 @@ public class lista_circular_lc {
         return tamaño;
     }
     
-     public void buscar(String referencia){
+     public boolean buscar(String referencia){
        
         nodo_lc aux = inicio;
         boolean encontrado = false;
@@ -131,13 +131,13 @@ public class lista_circular_lc {
         }while(aux != inicio && encontrado != true);
          
         if (encontrado==true){
-            System.out.println("nombre existente");
+            //System.out.println("nombre existente");
         }else
         {
-            System.out.println("nodo agregado");
+            //System.out.println("nodo agregado");
             
         }
-         
+        return encontrado;
          
     }
 
