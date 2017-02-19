@@ -10,5 +10,18 @@ package lista_circular;
  * @author R0GV3
  */
 public class lista_circular_lc {
+    private nodo_lc inicio;
+    private nodo_lc ultimo;
+    private int tamaño;
+    
+    public void lista_lc(){
+    inicio = null;
+    ultimo = null;
+    tamaño = 0;
+    }
+    
+    
+    
+    
     
 }
