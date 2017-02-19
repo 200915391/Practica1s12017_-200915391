@@ -118,25 +118,26 @@ public class lista_circular_lc {
      public void buscar(String referencia){
        
         nodo_lc aux = inicio;
-        // Bandera para indicar si el valor existe.
         boolean encontrado = false;
-        // Recorre la lista hasta encontrar el elemento o hasta 
-        // llegar al primer nodo nuevamente.
         do{
-            // Consulta si el valor del nodo es igual al de referencia.
             if ( aux.getNombre().toString().equals(referencia.toString())  ){
-                // Canbia el valor de la bandera.
                 encontrado = true;
-                System.out.println("llego");
+//                System.out.println("llego");
             }
             else{
-                // Avansa al siguiente. nodo.
                 aux = aux.getSiguiente();
-                System.out.println("No llego");
+//                System.out.println("No llego");
             }
         }while(aux != inicio && encontrado != true);
-
-         System.out.println("termina");
+         
+        if (encontrado==true){
+            System.out.println("nombre existente");
+        }else
+        {
+            System.out.println("nodo agregado");
+            
+        }
+         
          
     }
 
