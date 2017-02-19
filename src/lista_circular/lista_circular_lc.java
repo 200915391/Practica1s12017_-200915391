@@ -20,7 +20,11 @@ public class lista_circular_lc {
     tamaño = 0;
     }
     
-    
+    public void agregarAlFinal(int valor,String nombre){
+       
+        
+        
+    }
     
     
     
