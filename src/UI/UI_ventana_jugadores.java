@@ -133,7 +133,7 @@ public class UI_ventana_jugadores extends javax.swing.JFrame {
         {
               if (lista.buscar(jTextField1.getText())==true){
           //System.out.println("existe");
-          JOptionPane.showMessageDialog(null,"Jugador  "+ nombre_jugador+" no agregado");
+          JOptionPane.showMessageDialog(null,"Jugador  "+ nombre_jugador+" Existe No se puede agregar");
       }else{
           //System.out.println("agregar nuevo");
            lista.agregarAlFinal(num_player, jTextField1.getText().toString());
