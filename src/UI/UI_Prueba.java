@@ -14,7 +14,9 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
@@ -189,24 +191,24 @@ public class UI_Prueba extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       grafiquitas2();
+       graficar_crear_doc();
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
     
     
     public void grafiquitas2(){
-     System.out.println("Hola Mundo");
+     
     try {
       
       String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bindot.exe";
       
-      String fileInputPath = "C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\grafo1.txt";
+      String fileInputPath = "C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\grafo1.dot";      
       String fileOutputPath = "C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\src\\UI\\grafo1.jpg";
       
       String tParam = "-Tjpg";
       String tOParam = "-o";
-        
+       
       String[] cmd = new String[5];
       cmd[0] = dotPath;
       cmd[1] = tParam;
@@ -215,7 +217,7 @@ public class UI_Prueba extends javax.swing.JFrame {
       cmd[4] = fileOutputPath;
                   
       Runtime rt = Runtime.getRuntime();
-      
+       System.out.println(rt.toString());
       rt.exec( cmd );
       
     } catch (Exception ex) {
@@ -229,21 +231,39 @@ public class UI_Prueba extends javax.swing.JFrame {
     
     
   
+public void graficar_crear_doc(){
+try{
+            //Abro stream, crea el fichero si no existe
+            FileWriter fw = new FileWriter("C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\grafo1.dot");
+            fw.write("digraph g { \n");
+            
+            fw.write("node1;" + "\n");
+            fw.write("node1;"+ "\n");   
+           
+            fw.write("} \n");
+            //Cierro el stream
+            fw.close(); 
+                //Abro el stream, el fichero debe existir
+            FileReader fr=new FileReader("C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\grafo1.dot");
+            //Leemos el fichero y lo mostramos por pantalla
+            int valor=fr.read();
+            while(valor!=-1){
+                System.out.print((char)valor);
+                valor=fr.read();
+            }
+            //Cerramos el stream
+            fr.close();
+            
+            //llamamos graphviz
+            grafiquitas2();
+            
+        }catch(IOException e){
+            System.out.println("Error E/S: "+e);
+        }
     
-//    public static void grafiquitas()
-//{
-//    GraphViz gv=new GraphViz();
-//    gv.addln(gv.start_graph());
-//    gv.add(dotFormat);
-//    gv.addln(gv.end_graph());
-//   // String type = "gif";
-//    String type = "pdf";
-//  // gv.increaseDpi();
-//    gv.decreaseDpi();
-//    gv.decreaseDpi();
-//    File out = new File(fileName+"."+ type); 
-//    gv.writeGraphToFile( gv.getGraph( gv.getDotSource(), type ), out );
-//}
+    
+
+}
     
     
     
