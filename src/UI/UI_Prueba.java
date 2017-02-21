@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package UI;
+import java.awt.Image;
 import lista_circular.*;
 
 
@@ -19,7 +20,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Properties;
+import javax.swing.ImageIcon;  // lib image
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 /**
  *
  * @author R0GV3
@@ -28,12 +37,16 @@ public class UI_Prueba extends javax.swing.JFrame {
 
     lista_circular.lista_circular_lc lista = new lista_circular.lista_circular_lc(); // instancia de la priemr lista
     int num_player=0;
+    Image ima = new ImageIcon(getClass().getResource("grafo1.jpg")).getImage();
+    Image imaEx = new ImageIcon("grafo1.jpg").getImage();
     
+    ImageIcon imagen2 = new ImageIcon("grafo1.jpg");
     /**
      * Creates new form UI_Prueba
      */
     public UI_Prueba() {
         initComponents();
+       
     }
 
    
@@ -48,8 +61,8 @@ public class UI_Prueba extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,8 +99,6 @@ public class UI_Prueba extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("1");
-
         jButton4.setText("Graficar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,23 +111,29 @@ public class UI_Prueba extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(42, 42, 42)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(jButton4))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton4))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,12 +150,11 @@ public class UI_Prueba extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, Short.MAX_VALUE))
-                .addContainerGap())
+                            .addComponent(jButton4)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                .addGap(55, 55, 55))
         );
 
         pack();
@@ -191,7 +207,21 @@ public class UI_Prueba extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       graficar_crear_doc();
+      
+      
+        
+        
+        Image imagenInterna = new ImageIcon( getClass().getResource("grafo1.jpg")).getImage();
+        //jPanel1.setImagen(imagenInterna);
+       
+        graficar_crear_doc();
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/grafo1.jpg")));
+        //jLabel2.setIcon(imagen2);
+        //jLabel2.setImage(ima);
+       // jLabel2.setText("ff");
+        
+        
+        
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -201,7 +231,7 @@ public class UI_Prueba extends javax.swing.JFrame {
      
     try {
       
-      String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bindot.exe";
+      String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
       
       String fileInputPath = "C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\grafo1.dot";      
       String fileOutputPath = "C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\src\\UI\\grafo1.jpg";
@@ -238,8 +268,8 @@ try{
             fw.write("digraph g { \n");
             
             fw.write("node1;" + "\n");
-            fw.write("node1;"+ "\n");   
-           
+            fw.write("node2;"+ "\n");   
+            fw.write("node3;"+ "\n");
             fw.write("} \n");
             //Cierro el stream
             fw.close(); 

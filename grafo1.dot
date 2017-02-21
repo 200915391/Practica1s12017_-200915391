@@ -1,4 +1,5 @@
 digraph g { 
 node1;
-node1;
+node2;
+node3;
 } 
