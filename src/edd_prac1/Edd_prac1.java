@@ -14,10 +14,10 @@ public class Edd_prac1 {
     public static void main(String[] args) {
         // TODO code application logic here
         UI.UI_ventana1  ventana_1 = new   UI.UI_ventana1();
-        //ventana_1.setVisible(true);                          //  mostrar cuando termine lista
+        ventana_1.setVisible(true);                          //  mostrar cuando termine lista
         
         UI.UI_Prueba ventanita_prueba = new UI.UI_Prueba();
-        ventanita_prueba.setVisible(true);
+        //ventanita_prueba.setVisible(true);
         
         
         

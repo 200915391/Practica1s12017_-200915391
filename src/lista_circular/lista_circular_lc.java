@@ -6,6 +6,9 @@
 package lista_circular;
 import UI.*;
 import UI.UI_ventana_juego;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JTextArea;
 
 /**
@@ -144,4 +147,90 @@ public class lista_circular_lc {
     
     
     
+     public void getGraphiz(){
+     
+    try {
+      
+      String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
+      
+      String fileInputPath = "C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\grafo1.dot";      
+      String fileOutputPath = "C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\src\\UI\\grafo1.jpg";
+      
+      String tParam = "-Tjpg";
+      String tOParam = "-o";
+       
+      String[] cmd = new String[5];
+      cmd[0] = dotPath;
+      cmd[1] = tParam;
+      cmd[2] = fileInputPath;
+      cmd[3] = tOParam;
+      cmd[4] = fileOutputPath;
+                  
+      Runtime rt = Runtime.getRuntime();
+       System.out.println(rt.toString());
+      rt.exec( cmd );
+      
+    } catch (Exception ex) {
+      //ex.printStackTrace();
+        System.out.println("nel");
+    } finally {
+    }
+
+  }
+     
+     public void getGenerarGrafica(){
+            try{
+            //Abro stream, crea el fichero si no existe
+            FileWriter fw = new FileWriter("C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\grafo1.dot");
+            fw.write("digraph g { \n");
+            
+//            fw.write("node1;" + "\n");
+//            fw.write("node2;"+ "\n");   
+//            fw.write("node3;"+ "\n");
+            ///////////////
+            
+             if (!esVacia()) {
+            nodo_lc aux = inicio;
+            int i = 0;
+            
+            do{
+                System.out.print(aux.getNombre()+"->"+aux.getSiguiente().getNombre()+"\n");
+               fw.write(aux.getNombre()+ "\n");
+               fw.write(aux.getNombre()+"->"+aux.getSiguiente().getNombre()+"\n");
+               
+                aux = aux.getSiguiente();
+                i++;    
+            }while(aux != inicio);
+    
+        }
+            
+            
+            
+            
+            /////////////////
+            
+            
+            fw.write("} \n");
+            //Cierro el stream
+            fw.close(); 
+                //Abro el stream, el fichero debe existir
+            FileReader fr=new FileReader("C:\\Users\\R0GV3\\Desktop\\EDD_pra1\\edd_prac1\\grafo1.dot");
+            //Leemos el fichero y lo mostramos por pantalla
+            int valor=fr.read();
+            while(valor!=-1){
+                System.out.print((char)valor);
+                valor=fr.read();
+            }
+            //Cerramos el stream
+            fr.close();
+            
+            //llamamos graphviz
+            getGraphiz();
+            
+        }catch(IOException e){
+            System.out.println("Error E/S: "+e);
+        }
+     }
+     
+     
 }

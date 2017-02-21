@@ -177,6 +177,9 @@ public class UI_ventana_jugadores extends javax.swing.JFrame {
         ventana_3.setVisible(true);
         this.setVisible(false);
         
+        lista.getGenerarGrafica();
+       // UI.UI_ventana_juego.enviar(lista);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
