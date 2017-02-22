@@ -11,4 +11,8 @@ package lista_circular;
  */
 public class cola_letras {
     
+    public void asignar (){
+    
+    }
+    
 }
