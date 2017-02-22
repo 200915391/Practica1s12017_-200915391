@@ -1,10 +1,4 @@
 digraph g { 
-fer
-fer->lius
-lius
-lius->chepe
-chepe
-chepe->naco
-naco
-naco->fer
+
+->
 } 
